@@ -1,0 +1,396 @@
+
+#container {
+  margin-top:10px;
+}
+
+#entryForm,.container p {
+  margin-top:14px;
+}
+
+.actionButtons {
+  width:20%;
+}
+
+.actionLinks a {
+  cursor:pointer;
+  font-size:20px;
+  padding:5px;
+}
+td .medTime span {
+  float: left;
+  clear: left;
+
+}
+.fa-trash-alt {
+  color: #E3968B;
+}
+.fa-trash-alt:hover {
+  color: #AC8386;
+}
+.fa-edit {
+  color: #839EAC;
+}
+.fa-edit:hover {
+  color: #386279;
+}
+.fa-times {
+  color: #C34F4A;
+}
+.fa-times:hover {
+  color: #762521;
+}
+.addMed {
+  border:0 solid transparent;
+}
+.alert.alert-danger.loginError {
+  border-radius:0;
+  margin:0 auto;
+  max-width:380px;
+}
+
+.col-md-4.borderRight, .col-md-3.borderRight {
+  border-right:2px solid #c9c9c9;
+}
+
+.col-md-12.inputForm {
+  margin-bottom:40px;
+}
+
+.container legend {
+  padding:15px;
+}
+
+.container td p {
+  margin:0;
+  padding:0;
+}
+td {
+  vertical-align: middle !important;
+}
+.dosage,.howOften {
+  width:10%;
+}
+
+.form-control {
+  font-size:16px;
+  height:163px;
+  importantwidth:555px;
+  padding:10px;
+  position:relative;
+  resize:none;
+}
+
+.form-signin {
+  background-color:#fff;
+  border:1px solid rgba(0,0,0,0.1);
+  margin:0 auto;
+  max-width:380px;
+  padding:15px 35px 45px;
+}
+.borderRight {
+    min-height: 438px;
+}
+.form-signin .checkbox {
+  font-weight:400;
+}
+
+.form-signin .form-signin-heading,.form-signin .checkbox {
+  margin-bottom:30px;
+}
+
+.form-signin input[type="password"],
+.form-signin input[type="text"] {
+  border-top-left-radius:0;
+  border-top-right-radius:0;
+}
+.submitButton {
+  padding-top: 25px;
+}
+.form-signin input[type="text"]
+{
+  margin-bottom:-1px;
+}
+
+.header {
+  background-color:#c0dfd9;
+  color:#FFF;
+}
+
+.horizontal-collapse {
+  height:70px;
+}
+
+.message:nth-child(even) {
+  background-color:#f8f8f8;
+}
+
+.message:nth-child(odd) {
+  background-color:#eee;
+}
+
+.name,.medication {
+  width:10%;
+}
+.col-md-4.timeScroll {
+  overflow: auto;
+  max-height: 207px;
+}
+.form-control:focus {
+  border: none;
+}
+.navbar-collapse.collapse {
+  -moz-transition:max-height .3s ease;
+  -o-transition:max-height .3s ease;
+  -webkit-transition:max-height .3s ease;
+  display:block;
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .3s ease;
+}
+
+.navbar-collapse.collapse.in {
+  max-height:2000px;
+}
+
+.navbar-collapse.in {
+  max-height:2000px;
+  overflow-y:hidden;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color:#3b3a36!important;
+  font-family: bebas-neue, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size:28px;
+  letter-spacing:.085em;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  text-decoration:underline;
+}
+.navbar-default .navbar-nav > li > a:active {
+  text-decoration:underline;
+}
+
+.navbar-default .navbar-toggle {
+  background-color:#FFF;
+  border:none;
+}
+
+.navbar-nav {
+  margin:7.5px -15px;
+}
+
+.navbar.navbar-default {
+  background-color:#e9ece5;
+  border:none;
+}
+.padding  {
+  padding-top:15px !important;
+}
+.notes {
+  width:35%;
+}
+
+.phoneNumber {
+  width:12%;
+}
+
+.wrapper {
+  margin-bottom:80px;
+  margin-top:80px;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body,html, .container {
+  font-size:14px;
+  margin:0;
+  padding:0;
+}
+
+h1.lead {
+  font-family: proxima-nova, sans-serif;
+  font-size:48px;
+  font-style:normal;
+  font-weight:700;
+  margin:0;
+  padding-top:10px;
+}
+h1.lead span {
+  font-weight:100;
+}
+.lead a {
+  color: white;
+  cursor: pointer;
+  font-size: 56px;
+}
+.lead a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+h3 {
+  font-family: proxima-nova, sans-serif !important;
+  font-style:normal;
+  font-weight:500;
+}
+
+input.editable-input {
+  width:100%;
+  padding: 2px;
+  height: auto;
+  border: none;
+}
+
+input.editable-input:focus,textarea.notes.editable-input:focus {
+  border-radius:5px;
+}
+
+input.medList.editable-input,input.dosageList.editable-input,input.howOftenList.editable-input {
+  margin-bottom:5px;
+}
+
+li {
+  float:left;
+}
+li a {
+  color:#FFF;
+  display:block;
+  padding:14px 16px;
+  text-align:center;
+  text-decoration:none;
+}
+
+li a:hover {
+  color:#eee;
+  text-decoration:underline;
+}
+
+tbody {
+  font-size:14px;
+}
+button.btn.btn-link {
+  width: 40px;
+}
+
+textarea.notes.editable-input {
+  border-radius: 5px;
+  padding: 2px;
+  width: 100%;
+  resize: none;
+  height: 25px;
+  border: none;
+  vertical-align: middle;
+}
+.medList th {
+  padding-top: 0 !important;
+}
+textarea#notes {
+  height: 34px;
+}
+.form-control {
+  height: 25px;
+}
+ul {
+  list-style-type:none;
+  margin:0;
+  overflow:hidden;
+  padding:0;
+}
+@media (max-width: 972px) {
+  .col-md-4.borderRight, .col-md-3.borderRight {
+    border-right: none;
+  }
+  .container.mainSection {
+    border: none !important;
+  }
+}
+
+button.btn.btnWhite.btn-lightBlue.btn-md {
+  margin-bottom: 20px;
+}
+.peopleInfo tr {
+  border-bottom: 1px solid #dfdfdf;
+}
+.btn-primary {
+  background-color: #839EAC;
+}
+#footer {
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  height: 60px;
+  background-color: #3b3a36;
+  color: #e9ece5;
+}
+.footer-block p {
+  margin: 20px 0;
+}
+.container.mainSection {
+  border: 1px solid #c9c9c9;
+}
+.container.mainSection.peopleInfo {
+  min-height: 650px;
+}
+@media (min-width: 768px) {
+.navbar-right {
+    margin-right: -45px !important;
+  }
+}
+
+@media (max-width: 991px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in {
+        display: block!important;
+        padding: 5px 0;
+    }
+    .navbar-collapse.collapse.in li a {
+        background-color:white !important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+    .form-signin {
+    background-color: #fff;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+.form-signin input {
+    height: 56px;
+    font-size: 28px;
+}
+}

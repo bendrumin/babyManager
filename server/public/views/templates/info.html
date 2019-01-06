@@ -1,0 +1,76 @@
+<div ng-include="'views/partials/nav.html'"></div>
+<div class="container mainSection peopleInfo" ng-controller="PeopleController as patient">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Here are all the patients in the system</h3>
+      <div class="table-responsive table-condenced table-hover">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="name">
+                Patient Name
+              </th>
+              <th class="hidden-sm hidden-xs phoneNumber">Phone Number</th>
+              <th class="hidden-sm hidden-xs notes">Notes</th>
+              <th class="medication">Medication</th>
+              <th class="dosage">Dosage</th>
+              <th class="howOften">Time</th>
+              <th class="hidden-sm hidden-xs actionButtons"></th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr ng-repeat="person in patient.people" >
+              <td class=" name">{{person.name}}</span></td>
+              <td class=" hidden-sm hidden-xs phoneNumber">
+                <span ng-show="!rowform.$visible"  editable-text="person.phoneNumber" e-ui-mask="999-999-9999" e-class="phoneNumber" e-form="rowform" class="hidden-sm hidden-xs" >{{person.phoneNumber}}</span></td>
+              <td class=" notes hidden-sm hidden-xs">
+                <span ng-show="!rowform.$visible" editable-textarea="person.notes" e-class="notes" e-form="rowform" class="hidden-sm hidden-xs" rows="3" cols="10">{{person.notes}}</span></td>
+              <td class=" medication">
+                <p ng-repeat="meds in person.allMeds">
+                  {{meds.medication}}
+                </p>
+              </td>
+              <!-- The medication, dosage and how often would be in a findById (which i have no clue how to do) -->
+              <td class=" dosage">
+                <p ng-repeat="meds in person.allMeds">
+                  <span ng-show="!rowform.$visible" editable-text="meds.dosage" e-class="dosage" e-form="rowform">{{meds.dosage}}</span>
+                </p>
+              </td>
+              <td class=" howOften">
+                <p ng-repeat="meds in person.allMeds" class="medTime">
+                  <span class="medTime">{{meds.timeOne | date: "h:mma"}}</span>
+                  <span class="medTime">{{meds.timeTwo | date: "h:mma"}}</span>
+                  <span class="medTime">{{meds.timeThree | date: "h:mma"}}</span>
+                  <span class="medTime">{{meds.timeFour | date: "h:mma"}}</span>
+                  <span class="medTime">{{meds.timeFive | date: "h:mma"}}</span>
+
+                </p>
+
+              </td>
+              <td class="actionButtons hidden-sm hidden-xs">
+                <form onaftersave="patient.updatePerson(person)" editable-form name="rowform" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == person">
+                  <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-link">
+                    <i class="fa fa-save fa-lg"></i>
+                  </button>
+                  <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-link">
+                    <i class="fa fa-times fa-lg"></i>
+                  </button>
+                </form>
+                <div ng-show="!rowform.$visible">
+                  <button type="button" class="btn btn-link" ng-click="rowform.$show()">
+                    <i class="fa fa-edit fa-lg"></i></button>
+                  <button type="button" class="btn btn-link" name="button" ng-click="patient.deletePerson(person._id)">
+                    <i class="fa fa-trash-alt fa-lg"></i>
+                  </button>
+                </div>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div ng-include="'views/partials/footer.html'"></div>

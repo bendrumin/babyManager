@@ -1,0 +1,189 @@
+<div ng-include="'views/partials/nav.html'"></div>
+<div class="container mainSection">
+
+  <div class="peopleInput" ng-controller="PeopleController as patient">
+    <div class="col-md-12 inputForm">
+
+      <div class="row">
+        <form class = "medForm">
+          <fieldset>
+            <!-- Form Name -->
+            <legend>Patient Intake</legend>
+            <!-- Text input-->
+            <div class="col-md-4 col-sm-12 borderRight">
+
+              <div class="form-group">
+                <label for="Name">Name</label>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
+
+                  <input id="fullName" name="fullName" ng-model="patient.newPerson.name" type="text" placeholder="Name" class="form-control input-md" alt="Patient Name">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label for="Phone Number">Phone Number</label>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                  <!-- Replace with SMS reminder once Twillio works -->
+                  <input id="phoneNumber" name="phoneNumber" ui-mask="999-999-9999" ng-model="patient.newPerson.phoneNumber" type="tel" class="form-control input-md">
+
+                </div>
+              </div>
+
+              <!-- Textarea -->
+              <div class="form-group">
+                <label for="Notes">Notes</label>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-sticky-note"></i></span>
+                  <textarea class="form-control" id="notes" name="notes" ng-model="patient.newPerson.notes" placeholder="Notes"></textarea>
+                </div>
+              </div>
+                <div class="form-group">
+                <label for="medication">Medication</label>
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-medkit"></i></span>
+
+                  <input name="medication" type="text" placeholder="Medication" ng-model="patient.newPerson.medication" class="form-control input-md">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <div>
+                  <label for="dosage">Dosage</label>
+                  <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-medkit"></i></span>
+                    <input name="dosage" type="text" placeholder="Dosage" ng-model="patient.newPerson.dosage" class="form-control input-md">
+                  </div>
+                </div>
+              </div>
+
+              <p>
+                <p>Adding a medication is not required</p>
+              </p>
+
+            </div>
+
+            <div class="col-md-3 borderRight">
+              <div class="form-group">
+                <label for="">What time</label>
+                <div class="input-group">
+                  <input type="time" name="" ng-model="patient.newPerson.timeOne" class="form-control input-md" value="">
+                  <span class="input-group-addon"><i class="fa fa-clock"></i></span>
+
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="">Second Pill</label>
+                <div class="input-group">
+                  <input type="time" name="" ng-model="patient.newPerson.timeTwo" class="form-control input-md" value="">
+                  <span class="input-group-addon"><i class="fa fa-clock"></i></span>
+
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="">Third Pill</label>
+                <div class="input-group">
+                  <input type="time" name="" ng-model="patient.newPerson.timeThree" class="form-control input-md" value="">
+                  <span class="input-group-addon"><i class="fa fa-clock"></i></span>
+
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="">Fourth Pill</label>
+                <div class="input-group ">
+                  <input type="time" name="" ng-model="patient.newPerson.timeFour" class="form-control input-md" value="">
+                  <span class="input-group-addon"><i class="fa fa-clock"></i></span>
+
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="">Fifth Pill</label>
+                <div class="input-group">
+                  <input type="time" name="" ng-model="patient.newPerson.timeFive" class="form-control input-md" value="">
+                  <span class="input-group-addon"><i class="fa fa-clock"></i></span>
+
+                </div>
+              </div>
+              <div class="form-group">
+                <label for=""></label>
+                <div class="input-group">
+                  <button type="button" class="btn btn-lightBlue btnWhite btn-sm pull-right addMed hidden-sm hidden-xs" name="button" ng-click="patient.addMedication(patient.newPerson.medication, patient.newPerson.dosage, patient.newPerson.timeOne, patient.newPerson.timeTwo, patient.newPerson.timeThree, patient.newPerson.timeFour, patient.newPerson.timeFive)">Add Medication</button>
+                  <button type="button" class="btn btn-lightBlue btnWhite btn-md pull-right hidden-md hidden-lg hidden-xl addMed" name="button" ng-click="patient.addMedication(patient.newPerson.medication, patient.newPerson.dosage, patient.newPerson.timeOne, patient.newPerson.timeTwo, patient.newPerson.timeThree, patient.newPerson.timeFour, patient.newPerson.timeFive)">Add Medication</button>
+
+
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="col-md-5 col-sm-12">
+              <table class="table table-responsive medList">
+                <thead>
+                  <tr>
+                    <th>
+                      Medication
+                    </th>
+                    <th>
+                      Dosage
+                    </th>
+                    <th>
+                      What time
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="meds in patient.allMeds" >
+                    <td>
+                      <p class="medicationList">{{meds.medication}}</p>
+                    </td>
+                    <td>
+                      <p>{{meds.dosage}}</p>
+                    </td>
+                    <td>
+                      <p>{{meds.timeOne | date: "hh:mm a"}}</p>
+                      <p>{{meds.timeTwo | date: "hh:mm a"}}</p>
+                      <p>{{meds.timeThree | date: "hh:mm a"}}</p>
+                      <p>{{meds.timeFour | date: "hh:mm a"}}</p>
+                      <p>{{meds.timeFive | date: "hh:mm a"}}</p>
+                    </td>
+                  </tr>
+
+                </tbody>
+
+              </table>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-10"></div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for=""></label>
+                <div class="input-group">
+                  <button class="btn btnWhite btn-lightBlue btn-md hidden-sm hidden-xs" ng-click="patient.addPerson(patient.newPerson.name, patient.newPerson.phoneNumber, patient.newPerson.notes);">Add Patient</button>
+                  <button class="btn btnWhite btn-lightBlue btn-lg hidden-md hidden-lg hidden-xl" ng-click="patient.addPerson(patient.newPerson.name, patient.newPerson.phoneNumber, patient.newPerson.notes);">Add Patient</button>
+
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </fieldset>
+  </form>
+
+</div>
+<div ng-include="'views/partials/footer.html'"></div>
